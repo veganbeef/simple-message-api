@@ -1,11 +1,11 @@
 import { IResolvers } from 'graphql-tools';
 
-import { Message, MessageQueryInput, SendMessageInput } from './schema-types';
+import { Message, MessagesQueryArgs, SendMessageInput } from './schema-types';
 
 
-const resolverMap: IResolvers = {
+const resolvers: IResolvers = {
   Query: {
-    messages: async (parent: any, args: { options: MessageQueryInput }): Promise<Message[]> => {
+    messages: async (parent: any, args: MessagesQueryArgs): Promise<Message[]> => {
       return [{content: 'test', recipient: 'me', sender: 'you', timestamp: new Date().toISOString()}];
     }
   },
@@ -16,4 +16,4 @@ const resolverMap: IResolvers = {
   }
 };
 
-export default resolverMap;
+export default resolvers;

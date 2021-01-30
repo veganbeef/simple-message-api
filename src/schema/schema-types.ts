@@ -5,7 +5,7 @@ export type Message = {
   timestamp: string;
 };
 
-export type MessageQueryInput = {
+export type MessagesQueryArgs = {
   sender?: string;
   recipient?: string;
   allMessages?: boolean;

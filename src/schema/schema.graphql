@@ -5,12 +5,6 @@ type Message {
   timestamp: String!
 }
 
-input MessageQueryInput {
-  sender: String
-  recipient: String
-  allMessages: Boolean = false
-}
-
 input SendMessageInput {
   sender: String!
   recipient: String!
@@ -19,7 +13,7 @@ input SendMessageInput {
 
 # root of all GraphQL queries
 type Query {
-  messages(options: MessageQueryInput!): [Message]!
+  messages(sender: String, recipient: String, allMessages: Boolean = false): [Message]!
 }
 
 # root of all GraphQL mutations
