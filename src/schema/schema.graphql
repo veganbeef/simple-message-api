@@ -1,0 +1,28 @@
+type Message {
+  content: String!
+  sender: String!
+  recipient: String!
+  timestamp: String!
+}
+
+input MessageQueryInput {
+  sender: String
+  recipient: String
+  allMessages: Boolean = false
+}
+
+input SendMessageInput {
+  sender: String!
+  recipient: String!
+  content: String!
+}
+
+# root of all GraphQL queries
+type Query {
+  messages(options: MessageQueryInput!): [Message]!
+}
+
+# root of all GraphQL mutations
+type Mutation {
+  sendMessage(message: SendMessageInput!): Message!
+}
