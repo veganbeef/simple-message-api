@@ -1,17 +1,18 @@
-import { IResolvers } from 'graphql-tools';
+import {IResolvers} from 'graphql-tools';
 
-import { Message, MessagesQueryArgs, SendMessageInput } from './schema-types';
+import {JSONMessages} from '../dataSources/JSONMessages';
+import {Message, MutationSendMessageArgs, QueryMessagesArgs} from './schema-types';
 
 
 const resolvers: IResolvers = {
   Query: {
-    messages: async (parent: any, args: MessagesQueryArgs): Promise<Message[]> => {
-      return [{content: 'test', recipient: 'me', sender: 'you', timestamp: new Date().toISOString()}];
+    messages: async (parent: any, args: QueryMessagesArgs): Promise<Message[]> => {
+      return new JSONMessages().getMessages(args);
     }
   },
   Mutation: {
-    sendMessage: async (parent: any, args: { message: SendMessageInput }): Promise<Message> => {
-      return { ...args.message, timestamp: new Date().toISOString() }
+    sendMessage: async (parent: any, args: MutationSendMessageArgs): Promise<Message> => {
+      return new JSONMessages().sendMessage(args);
     }
   }
 };

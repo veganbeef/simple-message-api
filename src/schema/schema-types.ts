@@ -5,14 +5,18 @@ export type Message = {
   timestamp: string;
 };
 
-export type MessagesQueryArgs = {
+export type QueryMessagesArgs = {
   sender?: string;
   recipient?: string;
-  allMessages?: boolean;
+  allMessages: boolean;
 };
 
 export type SendMessageInput = {
   sender: string;
   recipient: string;
   content: string;
+};
+
+export type MutationSendMessageArgs = {
+  message: SendMessageInput;
 };
