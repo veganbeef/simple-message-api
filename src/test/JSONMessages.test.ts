@@ -1,6 +1,7 @@
+import { JSONMessages } from '../dataSources/JSONMessages';
 import * as utils from '../utils';
-import {JSONMessages} from '../dataSources/JSONMessages';
-import {complexDatabaseResponse, newMessage, oldMessage, simpleDatabaseResponse} from './mockData';
+import { complexDatabaseResponse, newMessage, oldMessage, simpleDatabaseResponse } from './mockData';
+
 
 describe('getMessages method', () => {
   const readFromDBSpy = jest.spyOn(utils, "readFromJSONDatabase");
@@ -64,7 +65,7 @@ describe('getMessages method', () => {
 
 describe('sendMessage method', () => {
   const writeToDBSpy = jest.spyOn(utils, 'writeToJSONDatabase');
-  writeToDBSpy.mockImplementation(async (message) => {});
+  writeToDBSpy.mockImplementation(async (message) => { return; });
 
   const now = new Date();
 

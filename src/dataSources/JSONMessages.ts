@@ -1,5 +1,5 @@
-import {Message, MutationSendMessageArgs, QueryMessagesArgs} from '../schema/schema-types';
-import {readFromJSONDatabase, writeToJSONDatabase} from '../utils';
+import { Message, MutationSendMessageArgs, QueryMessagesArgs } from '../schema/schema-types';
+import { readFromJSONDatabase, writeToJSONDatabase } from '../utils';
 
 
 /**

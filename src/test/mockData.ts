@@ -18,7 +18,7 @@ export const newMessage = {
 
 export const simpleDatabaseResponse = [oldMessage, newMessage];
 
-let longDatabaseResponse = [];
+const longDatabaseResponse = [];
 for (let i = 0; i < 200; i++) {
   if (i % 2) {
     longDatabaseResponse.push(oldMessage);

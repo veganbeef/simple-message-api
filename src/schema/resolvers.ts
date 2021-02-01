@@ -1,7 +1,7 @@
-import {IResolvers} from 'graphql-tools';
+import { IResolvers } from 'graphql-tools';
 
-import {JSONMessages} from '../dataSources/JSONMessages';
-import {Message, MutationSendMessageArgs, QueryMessagesArgs} from './schema-types';
+import { JSONMessages } from '../dataSources/JSONMessages';
+import { Message, MutationSendMessageArgs, QueryMessagesArgs } from './schema-types';
 
 
 const resolvers: IResolvers = {
