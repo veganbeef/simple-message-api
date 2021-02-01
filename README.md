@@ -81,3 +81,4 @@ mutation {
 * add schema-type automatic generation with `graphql-codegen` tool
 * implement GraphQL subscription to push chat updates to client
 * plan for multiple simultaneous writes using a queue
+* update unit tests with a mocked Date library
