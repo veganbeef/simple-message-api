@@ -38,7 +38,7 @@ To query the local database for available messages, use the `messages` query. Al
 **Examples**
 ```
 query {
-  messages(sender: 'Jules', recipient: 'Brett', allMessages: true) {
+  messages(sender: "Jules", recipient: "Brett", allMessages: true) {
     content
     timestamp
   }
