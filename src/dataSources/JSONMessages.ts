@@ -20,9 +20,10 @@ export class JSONMessages {
     }
 
     if (args.allMessages) {
-      return allMessages;
+      const cutoff = new Date();
+      cutoff.setDate(new Date().getDate() - 30);
+      return allMessages.filter(message => new Date(message.timestamp) >= cutoff);
     } else {
-      // QQ: is this sort necessary? or should it be at the top of the method?
       allMessages.sort((a, b) => {
         const dateA = new Date(a.timestamp);
         const dateB = new Date(b.timestamp);
